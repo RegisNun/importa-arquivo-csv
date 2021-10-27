@@ -25,9 +25,6 @@ class TipoSanguineoController extends Controller
     public function index()
     {
         $tipoSanguineo = TipoSanguineo::All();
-
-        // dd($tipoSanguineo);
-
         return view('tiposanguineo.listar', ['data' => $tipoSanguineo]);
     }
 }

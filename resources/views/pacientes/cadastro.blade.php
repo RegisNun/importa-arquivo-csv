@@ -9,16 +9,20 @@
                 <div class="card-header"><a href="{{url('/')}}">Voltar</a></div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
                     @endif
                     <form action="{{url('pacientes/cadastro')}}" method="post" id="form-importacao" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="exampleInputArquivo">Arquivo</label>
-                            <input type="file" class="form-control-file" name="arquivo" id="arquivo" required>                           
+                            <input type="file" class="form-control-file" name="arquivo" id="arquivo" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Importar</button>
                     </form>

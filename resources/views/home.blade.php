@@ -14,6 +14,12 @@
                     </div>
                     @endif
 
+                    @if (session('error'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('error') }}
+                    </div>
+                    @endif
+
                     <div class="row justify-content-center">
                         <div class="card col-md-3 mr-3" style="width: 18rem;">
                             <div class="card-body">

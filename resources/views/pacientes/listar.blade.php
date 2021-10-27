@@ -5,7 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><a href="{{url('/')}}">Voltar</a></div>
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-10">
+                            <h3>Lista de Pacientes</h3>
+                        </div>
+                        <div class="col-2"> <a href="{{url('/')}}" class="btn btn-lg btn-primary">Voltar</a></div>
+                    </div>
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,8 +20,10 @@
                         {{ session('status') }}
                     </div>
                     @endif
+
+
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table table-bordered table-condensed table-striped table-hover">
                             <thead>
                                 <th>#</th>
                                 <th>Nome</th>
@@ -44,8 +53,6 @@
                                     <td>{{$row->cidade}}</td>
                                     <td>{{$row->estado}}</td>
                                     <td>{{$row->cep}}</td>
-
-
                                 </tr>
 
                                 @endforeach

@@ -5,8 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><a href="{{url('/')}}">Voltar</a></div>
-
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-10">
+                            <h3>Lista de Tipo Sanguineo</h3>
+                        </div>
+                        <div class="col-2"> <a href="{{url('/')}}" class="btn btn-lg btn-primary">Voltar</a></div>
+                    </div>
+                </div>
                 <div class="card-body">
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
@@ -14,7 +20,7 @@
                     </div>
                     @endif
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table table-bordered table-condensed table-striped table-hover">
                             <thead>
                                 <th>#</th>
                                 <th>Descrição</th>
@@ -29,7 +35,7 @@
                                 @endforeach
 
                             </tbody>
-                        </table>                      
+                        </table>
                     </div>
                 </div>
             </div>
